@@ -1,0 +1,186 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #1a1a1a 0%, #0d0d0d 80%);
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  -webkit-app-region: drag;
+}
+
+/* Tudo que for clicável deve desativar o drag */
+button,
+input,
+.cycles button,
+.nav button,
+.controls button,
+#btn-close {
+  -webkit-app-region: no-drag;
+}
+
+/* ===== WINDOW CONTROLS ===== */
+#window-controls {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  -webkit-app-region: drag;
+}
+
+#window-controls button {
+  -webkit-app-region: no-drag;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  width: 36px;
+  height: 36px;
+  font-size: 20px;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#window-controls button:hover {
+  background: #e74c3c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+}
+
+/* ===== NAV ===== */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  padding: 8px 0 22px;
+  -webkit-app-region: drag;
+}
+
+.nav button {
+  -webkit-app-region: no-drag;
+  padding: 10px 26px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav button:hover {
+  background: rgba(0, 123, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.nav button.active {
+  background: rgba(0, 123, 255, 0.35);
+  font-weight: 600;
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.3);
+}
+
+/* ===== SCREENS ===== */
+.container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.screen.visible {
+  display: flex;
+}
+
+/* ===== DISPLAY ===== */
+.display {
+  font-size: 80px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  padding: 25px 50px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== INPUT ===== */
+#custom-minutes {
+  width: 150px;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+#custom-minutes::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+#custom-minutes:focus {
+  outline: none;
+  box-shadow: 0 0 12px rgba(0, 123, 255, 0.5);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ===== UNIVERSAL BUTTON STYLE ===== */
+.controls button,
+.cycles button {
+  background: rgba(0, 123, 255, 0.15);
+  border: none;
+  padding: 12px 30px;
+  border-radius: 12px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.controls button:hover,
+.cycles button:hover {
+  background: rgba(0, 123, 255, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+}
+
+/* SMALL PRESET BUTTONS */
+.cycles {
+  display: flex;
+  gap: 12px;
+}
+
+.cycles button {
+  padding: 8px 18px;
+  font-size: 14px;
+}
+
+/* Remove setas do input number (Chrome, Edge, Opera) */
+#custom-minutes::-webkit-inner-spin-button,
+#custom-minutes::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove setas do input number (Firefox) */
+#custom-minutes {
+  -moz-appearance: textfield;
+}

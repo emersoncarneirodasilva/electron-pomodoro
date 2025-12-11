@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pomodoro</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- toda a área do body será arrastável pelo CSS -->
+
+    <!-- Botão fechar -->
+    <div id="window-controls">
+      <button id="btn-close" class="no-drag">×</button>
+    </div>
+
+    <!-- Navegação -->
+    <div class="nav no-drag">
+      <button data-screen="pomodoro" class="active no-drag">Pomodoro</button>
+      <button data-screen="timer" class="no-drag">Temporizador</button>
+      <button data-screen="stopwatch" class="no-drag">Cronômetro</button>
+    </div>
+
+    <div class="container">
+      <!-- 🔴 Pomodoro -->
+      <div id="screen-pomodoro" class="screen visible">
+        <div id="pomodoro-display" class="display">25:00</div>
+
+        <div class="controls">
+          <button id="p-start" class="no-drag">Iniciar</button>
+          <button id="p-pause" class="no-drag">Pausar</button>
+          <button id="p-reset" class="no-drag">Resetar</button>
+        </div>
+
+        <div class="cycles">
+          <button data-time="25" class="no-drag">Pomodoro 25</button>
+          <button data-time="5" class="no-drag">Pausa 5</button>
+          <button data-time="15" class="no-drag">Pausa Longa 15</button>
+        </div>
+      </div>
+
+      <!-- 🔵 Temporizador -->
+      <div id="screen-timer" class="screen">
+        <input
+          type="number"
+          id="custom-minutes"
+          placeholder="Minutos"
+          class="no-drag"
+        />
+
+        <div id="timer-display" class="display">00:00</div>
+
+        <div class="controls">
+          <button id="t-start" class="no-drag">Iniciar</button>
+          <button id="t-pause" class="no-drag">Pausar</button>
+          <button id="t-reset" class="no-drag">Resetar</button>
+        </div>
+      </div>
+
+      <!-- 🟢 Cronômetro -->
+      <div id="screen-stopwatch" class="screen">
+        <div id="stopwatch-display" class="display">00:00:00.000</div>
+
+        <div class="controls">
+          <button id="s-start" class="no-drag">Iniciar</button>
+          <button id="s-pause" class="no-drag">Pausar</button>
+          <button id="s-reset" class="no-drag">Resetar</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>
